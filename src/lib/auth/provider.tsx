@@ -65,8 +65,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const login = useCallback(async () => {
         try {
+            const redirectUri = `${window.location.origin}${ROUTES.CALLBACK}`;
             const data = await api.get<GoogleAuthorizeResponse>(
-                "/auth/google/authorize",
+                `/auth/google/authorize?redirect_uri=${encodeURIComponent(redirectUri)}`,
                 { skipAuth: true },
             );
 
