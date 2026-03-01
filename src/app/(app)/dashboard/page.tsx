@@ -12,6 +12,7 @@ import {
     Users,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { API_BASE_URL } from "@/lib/constants";
 
 import { api } from "@/lib/api-client";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -78,7 +79,7 @@ export default function DashboardPage() {
             api.get<UserResponse>("/users/me"),
             api.get<DashboardStatsResponse>("/admin/stats"),
             api.get<ActivityItem[]>("/admin/recent-activity"),
-            api.get<HealthResponse>("http://localhost:8000/health", { absoluteUrl: true }),
+            api.get<HealthResponse>(`${API_BASE_URL}/health`, { absoluteUrl: true }),
         ])
             .then(([userData, statsData, activityData, healthData]) => {
                 setUser(userData);
