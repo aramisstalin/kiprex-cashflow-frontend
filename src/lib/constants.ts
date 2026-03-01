@@ -1,5 +1,8 @@
 /** Application-wide constants. */
 
+export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME ?? "Kiprex Cashflow";
+export const APP_ENV = process.env.NEXT_PUBLIC_APP_ENV ?? "development";
+export const IS_PRODUCTION = APP_ENV === "production";
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
 
 export const AUTH_KEYS = {

@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth/hooks";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { Moon, Sun } from "lucide-react";
+import { APP_NAME } from "@/lib/constants";
 
 export default function LoginPage() {
     const { login, isLoading } = useAuth();
@@ -34,11 +35,11 @@ export default function LoginPage() {
                 {/* Logo */}
                 <div className="mb-8 flex flex-col items-center text-center">
                     <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-[var(--radius-lg)] bg-primary text-primary-foreground text-heading-2 font-bold shadow-[var(--shadow-lg)]">
-                        S
+                        {APP_NAME.charAt(0)}
                     </div>
                     <h1 className="text-heading-1 text-foreground">Welcome back</h1>
                     <p className="mt-2 text-body text-muted-foreground">
-                        Sign in to your Social account
+                        Sign in to your {APP_NAME} account
                     </p>
                 </div>
 

@@ -10,10 +10,12 @@ const inter = Inter({
     display: "swap",
 });
 
+import { APP_NAME } from "@/lib/constants";
+
 export const metadata: Metadata = {
     title: {
-        default: "Social — Enterprise Platform",
-        template: "%s | Social",
+        default: APP_NAME,
+        template: `%s | ${APP_NAME}`,
     },
     description:
         "Enterprise SaaS platform with multi-tenant support, RBAC, and analytics.",

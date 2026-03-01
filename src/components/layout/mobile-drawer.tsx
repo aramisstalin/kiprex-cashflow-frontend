@@ -20,7 +20,7 @@ import {
     type LucideIcon,
 } from "lucide-react";
 
-import { ADMIN_NAV_ITEMS, NAV_ITEMS } from "@/lib/constants";
+import { ADMIN_NAV_ITEMS, NAV_ITEMS, APP_NAME } from "@/lib/constants";
 import { useAuth } from "@/lib/auth/hooks";
 import { Avatar } from "@/components/ui/avatar";
 
@@ -73,9 +73,9 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 <div className="flex items-center justify-between h-[var(--header-height)] px-4 border-b border-sidebar-border">
                     <div className="flex items-center gap-3">
                         <div className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-md)] bg-primary text-primary-foreground font-bold">
-                            S
+                            {APP_NAME.charAt(0)}
                         </div>
-                        <span className="text-heading-3 text-sidebar-foreground">Social</span>
+                        <span className="text-heading-3 text-sidebar-foreground">{APP_NAME}</span>
                     </div>
                     <button
                         onClick={onClose}

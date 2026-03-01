@@ -21,7 +21,7 @@ import {
     type LucideIcon,
 } from "lucide-react";
 
-import { ADMIN_NAV_ITEMS, NAV_ITEMS, ROUTES } from "@/lib/constants";
+import { ADMIN_NAV_ITEMS, NAV_ITEMS, ROUTES, APP_NAME } from "@/lib/constants";
 import { Avatar } from "@/components/ui/avatar";
 import { useAuth } from "@/lib/auth/hooks";
 
@@ -58,11 +58,11 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
             <div className="flex items-center h-[var(--header-height)] px-4 border-b border-sidebar-border">
                 <div className="flex items-center gap-3 overflow-hidden">
                     <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-[var(--radius-md)] bg-primary text-primary-foreground font-bold text-body">
-                        S
+                        {APP_NAME.charAt(0)}
                     </div>
                     {!collapsed && (
                         <span className="text-heading-3 text-sidebar-foreground whitespace-nowrap">
-                            Social
+                            {APP_NAME}
                         </span>
                     )}
                 </div>
