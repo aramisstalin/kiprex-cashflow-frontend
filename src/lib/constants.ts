@@ -5,14 +5,6 @@ export const APP_ENV = process.env.NEXT_PUBLIC_APP_ENV ?? "development";
 export const IS_PRODUCTION = APP_ENV === "production";
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api/v1";
 
-export const HEALTH_CHECK_URL = (() => {
-    try {
-        return new URL("/health", API_BASE_URL).href;
-    } catch {
-        return "/health";
-    }
-})();
-
 export const AUTH_KEYS = {
     STATE: "oauth_state",
     CODE_VERIFIER: "oauth_code_verifier",
